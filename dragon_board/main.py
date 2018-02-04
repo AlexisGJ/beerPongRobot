@@ -14,7 +14,7 @@ motorPin2 = mraa.Gpio(MOTOR_GPIO_PIN_2)
 motorPin3 = mraa.Gpio(MOTOR_GPIO_PIN_3)
 motorPin4 = mraa.Gpio(MOTOR_GPIO_PIN_4)
 
-def setAngle (angle)
+def setAngle (angle):
     dutyCycle = (angle + 90) / 180.0 + 1
     if dutyCycle > 1:
         return
