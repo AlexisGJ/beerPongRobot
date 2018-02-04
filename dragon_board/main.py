@@ -23,7 +23,7 @@ def setAngle (angle):
         motorPin1.write(1)
         time.sleep(dutyCycle/1000.0)
         motorPin1.write(0)
-        time.sleep((20-dutyCycle)/1000.0))
+        time.sleep((20-dutyCycle)/1000.0)
 
     return
 
