@@ -1,0 +1,62 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, #c74b30, #e08f7d);
+    font-family: 'Lobster', cursive;
+}
+
+#appView {
+    width: 100%;
+    height: 100%;
+}
+
+#logo {
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+    padding: 40px 0px;
+    text-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+}
+
+#cups_holder {
+    width: 100%;
+    height: 150px;
+}
+.cup {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: url('redcup.png') center center no-repeat;
+    background-size: auto 100%;
+}
+.cup.left {
+    left: calc(50% - 180px);
+}
+.cup.center {
+    margin-top: 40px;
+    left: calc(50% - 90px);
+}
+.cup.right {
+    left: calc(50% + 0px);
+}
+
+#ping_pong_ball {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('pingpongball2.png') center center no-repeat;
+    background-size: 100%;
+    bottom: 50px;
+    left: calc(50% - 50px);
+
+    animation: ballWaiting 2s infinite;
+}
+
+
+@keyframes ballWaiting {
+    0%   {bottom: 45px}
+    50%  {bottom: 55px}
+    100%  {bottom: 45px}
+}
