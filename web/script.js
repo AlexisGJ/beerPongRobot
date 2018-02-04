@@ -15,5 +15,7 @@ $(function() {
     document.body.addEventListener('touchstart', function(e){
         alert(e.changedTouches[0].pageX);
     }, false)
+
+
 });
 
