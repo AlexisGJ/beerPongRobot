@@ -6,6 +6,8 @@ MOTOR_GPIO_PIN_2 = 24
 MOTOR_GPIO_PIN_3 = 25
 MOTOR_GPIO_PIN_4 = 26
 
+TIME = 1
+
 motorPin1 = mraa.Gpio(MOTOR_GPIO_PIN_1)
 motorPin2 = mraa.Gpio(MOTOR_GPIO_PIN_2)
 motorPin3 = mraa.Gpio(MOTOR_GPIO_PIN_3)
@@ -27,52 +29,52 @@ while True:
     motorPin3.write(0)
     motorPin4.write(0)
 
-    time.sleep(0.1)
+    time.sleep(TIME)
 
     motorPin1.write(1)
     motorPin2.write(1)
     motorPin3.write(0)
     motorPin4.write(0)
 
-    time.sleep(0.1)
+    time.sleep(TIME)
 
     motorPin1.write(0)
     motorPin2.write(1)
     motorPin3.write(0)
     motorPin4.write(0)
 
-    time.sleep(0.1)
+    time.sleep(TIME)
 
     motorPin1.write(0)
     motorPin2.write(1)
     motorPin3.write(1)
     motorPin4.write(0)
 
-    time.sleep(0.1)
+    time.sleep(TIME)
 
     motorPin1.write(0)
     motorPin2.write(0)
     motorPin3.write(1)
     motorPin4.write(0)
 
-    time.sleep(0.1)
+    time.sleep(TIME)
     motorPin1.write(0)
     motorPin2.write(0)
     motorPin3.write(1)
     motorPin4.write(1)
 
-    time.sleep(0.1)
+    time.sleep(TIME)
 
     motorPin1.write(0)
     motorPin2.write(0)
     motorPin3.write(0)
     motorPin4.write(1)
 
-    time.sleep(0.1)
+    time.sleep(TIME)
 
     motorPin1.write(1)
     motorPin2.write(0)
     motorPin3.write(0)
     motorPin4.write(1)
 
-    time.sleep(0.1)
+    time.sleep(TIME)
