@@ -14,73 +14,18 @@ motorPin2 = mraa.Gpio(MOTOR_GPIO_PIN_2)
 motorPin3 = mraa.Gpio(MOTOR_GPIO_PIN_3)
 motorPin4 = mraa.Gpio(MOTOR_GPIO_PIN_4)
 
-motorPin1.dir(mraa.DIR_OUT)
-motorPin2.dir(mraa.DIR_OUT)
-motorPin3.dir(mraa.DIR_OUT)
-motorPin4.dir(mraa.DIR_OUT)
+def setAngle (angle)
+    dutyCycle = (angle + 90) / 180.0 + 1
+    if dutyCycle > 1:
+        return
 
-motorPin1.write(0)
-motorPin2.write(0)
-motorPin3.write(0)
-motorPin4.write(0)
+    for i in range(0,10):
+        motorPin1.write(1)
+        time.sleep(dutyCycle/1000.0)
+        motorPin1.write((20-dutyCycle)/1000.0)
 
+    return
 
-while True:
-    motorPin1.write(0)
-    motorPin2.write(0)
-    motorPin3.write(0)
-    motorPin4.write(1)
-
-    time.sleep(TIME)
-
-    motorPin1.write(0)
-    motorPin2.write(0)
-    motorPin3.write(1)
-    motorPin4.write(1)
-
-    time.sleep(TIME)
-
-    motorPin1.write(0)
-    motorPin2.write(0)
-    motorPin3.write(1)
-    motorPin4.write(0)
-
-    time.sleep(TIME)
-
-    motorPin1.write(0)
-    motorPin2.write(1)
-    motorPin3.write(1)
-    motorPin4.write(0)
-
-    time.sleep(TIME)
-
-    motorPin1.write(0)
-    motorPin2.write(1)
-    motorPin3.write(0)
-    motorPin4.write(0)
-
-    time.sleep(TIME)
-
-    motorPin1.write(1)
-    motorPin2.write(1)
-    motorPin3.write(0)
-    motorPin4.write(0)
-
-    time.sleep(TIME)
-
-    motorPin1.write(1)
-    motorPin2.write(0)
-    motorPin3.write(0)
-    motorPin4.write(0)
-
-    time.sleep(TIME)
-
-
-    motorPin1.write(1)
-    motorPin2.write(0)
-    motorPin3.write(0)
-    motorPin4.write(1)
-
-    time.sleep(TIME)
-    if TIME > 0.0005:
-        TIME = TIME - 0.0005
+setAngle(0)
+setAngle(90)
+setAngle(-90)
