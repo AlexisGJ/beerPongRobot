@@ -29,9 +29,23 @@ while True:
 
     time.sleep(0.1)
 
+    motorPin1.write(1)
+    motorPin2.write(1)
+    motorPin3.write(0)
+    motorPin4.write(0)
+
+    time.sleep(0.1)
+
     motorPin1.write(0)
     motorPin2.write(1)
     motorPin3.write(0)
+    motorPin4.write(0)
+
+    time.sleep(0.1)
+
+    motorPin1.write(0)
+    motorPin2.write(1)
+    motorPin3.write(1)
     motorPin4.write(0)
 
     time.sleep(0.1)
@@ -42,8 +56,21 @@ while True:
     motorPin4.write(0)
 
     time.sleep(0.1)
+    motorPin1.write(0)
+    motorPin2.write(0)
+    motorPin3.write(1)
+    motorPin4.write(1)
+
+    time.sleep(0.1)
 
     motorPin1.write(0)
+    motorPin2.write(0)
+    motorPin3.write(0)
+    motorPin4.write(1)
+
+    time.sleep(0.1)
+
+    motorPin1.write(1)
     motorPin2.write(0)
     motorPin3.write(0)
     motorPin4.write(1)
