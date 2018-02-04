@@ -10,9 +10,14 @@ html, body {
 }
 
 #camera {
-  width: 100%;
-  height: auto;
+  display: none;
+  position: fixed;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
   border: none;
+  transform: rotate(-90deg);
 }
 
 #appView {
@@ -53,20 +58,69 @@ html, body {
 }
 
 #ping_pong_ball {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: url('pingpongball2.png') center center no-repeat;
+    display: none;
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    background: url('pingpongball3.png') center center no-repeat;
     background-size: 100%;
     bottom: 50px;
-    left: calc(50% - 50px);
+    left: calc(50% - 75px);
+    box-shadow: 0 0 100px rgba(0,0,0,0.3);
+    border-radius: 150px;
+    z-index: 5;
 
-    animation: ballWaiting 2s infinite;
+    /* animation: ballWaiting 2s infinite; */
+    transition: .8s;
 }
 
+#start_button {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    background: #c74b30;
+    border: 10px solid #fff;
+    bottom: 50px;
+    left: calc(50% - 75px);
+    box-shadow: 0 0 100px rgba(0,0,0,0.3);
+    border-radius: 150px;
+    text-align: center;
+    line-height: 140px;
+    color: #fff;
+    font-size: 40px;
+    z-index: 10;
+
+    transition: 1s;
+}
+
+#tap_cursor {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background: url('cursor.png') center center no-repeat;
+    background-size: 100%;
+    bottom: 120px;
+    left: calc(50% + 30px);
+    transform: rotate(-130deg);
+    z-index: 11;
+
+    animation: cursorWaiting 2s infinite;
+}
 
 @keyframes ballWaiting {
     0%   {bottom: 45px}
     50%  {bottom: 55px}
     100%  {bottom: 45px}
+}
+
+@keyframes cursorWaiting {
+    0%   {bottom: 125px}
+    50%  {bottom: 115px}
+    100%  {bottom: 125px}
+}
+
+@keyframes ballThrow {
+    0%   {bottom: 45px}
+    100%  {bottom: calc(100% + 150px);
+          transform: scale(0.1);}
 }

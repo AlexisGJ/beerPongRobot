@@ -13,14 +13,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+
 
   <div id="appView">
 
-    <iframe id="camera" src="http://172.26.226.171/"></iframe>
-
     <div id="logo">
-      Swipe Ball
+      Next Pong
     </div>
 
     <div id="cups_holder">
@@ -29,8 +27,13 @@
       <div class="cup center"></div>
     </div>
 
-    <div id="ping_pong_ball"></div>
+    <div id="start_button" onclick="start()">Start</div>
+
+    <div id="ping_pong_ball" onclick="shoot()"></div>
+    <div id="tap_cursor"></div>
 
   </div>
+
+  <iframe id="camera" src="http://172.26.226.171/"></iframe>
 </body>
 </html>
